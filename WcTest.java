@@ -48,17 +48,23 @@ public class WcTest{
 
   	@Test
   	public void getCountWords_gives_1_for_hii_string (){
-		String text = "       hii";
+		String text = "       hii    nahi";
 		Wc wc = new Wc(text);
-		assertEquals(1,wc.getCountWords());
+		assertEquals(2,wc.getCountWords());
   	}
 
- //  	@Test
- //  	public void getCountWords_gives_2_for_hii_string (){
-	//     String text = "hii how are you";
-	//     Wc wc = new Wc(text);
-	//     assertEquals(4,wc.getCountWords());
-	// }
-	
+  	@Test
+  	public void getCountWords_gives_2_for_hii_string (){
+	    String text = "hii how are you";
+	    Wc wc = new Wc(text);
+	    assertEquals(4,wc.getCountWords());
+	}
 
+	
+	@Test
+  	public void getCountWords_gives_0_for_non_empty_string (){
+    	String text = "  helooo      ba        gf      nahi       gdf \r\n   b";
+    	Wc wc = new Wc(text);
+    	assertEquals(6,wc.getCountWords());
+	}
 }

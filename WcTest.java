@@ -108,4 +108,13 @@ public class WcTest{
     	assertEquals(46,wc.getCountCherecters());
 
 	}
+
+	@Test
+  	public void getCountWithOption_gives_the_number_of_lines_for_l_option(){
+    	ReadFile rf = new ReadFile();
+    	String text = rf.readFile();
+    	Wc wc = new Wc(text);
+    	assertEquals(1,wc.getCountWithOption("-l"));
+	}
+	
 }

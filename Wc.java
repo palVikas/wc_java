@@ -27,6 +27,15 @@ class Wc{
   		return wordCount;
     }
 
+    public int getCountWithOption(String option){
+    	Wc wc = new Wc(text);
+	  	switch(option){
+	  		case "-l" :
+	  		return wc.getCountLines();
+	  		default :
+	  			break;
+		}
+		return 0;
+	}
     
-
 }

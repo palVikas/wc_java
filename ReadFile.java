@@ -1,9 +1,9 @@
 import java.io.*;
 
 class ReadFile{
-	public String readFile() {
+	public String readFile(String fileName) {
 		String text = null;
-		File file = new File("D:/wc_java/one.txt"); 
+		File file = new File(fileName); 
 		try {
 			FileReader reader = new FileReader(file);
 			char[] chars = new char[(int) file.length()];
@@ -17,3 +17,4 @@ class ReadFile{
   	 return text;
 	}
 }
+

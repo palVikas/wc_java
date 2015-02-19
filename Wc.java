@@ -13,7 +13,7 @@ class Wc{
 
 	public int getCountCherecters(){
     	return this.text.length();
-  }
+  	}
 
     public int getCountWords(){
     	int wordCount=0;

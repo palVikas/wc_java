@@ -79,7 +79,7 @@ public class WcTest{
   	public void readFile_gives_the_content_of_the_file_(){
   		String expected = "hello, this is a good day.\r\nWhat do you think?";
     	ReadFile rf = new ReadFile();
-    	String text = rf.readFile();
+    	String text = rf.readFile("one.txt");
     	assertEquals(expected,text);
 
 	}
@@ -87,7 +87,7 @@ public class WcTest{
 	@Test
   	public void getCountLines_geves_the_numberof_lines_in_given_file(){
     	ReadFile rf = new ReadFile();
-    	String text = rf.readFile();
+    	String text = rf.readFile("one.txt");
     	Wc wc = new Wc(text);
     	assertEquals(1,wc.getCountLines());
 
@@ -95,7 +95,7 @@ public class WcTest{
 	@Test
   	public void getCountwords_geves_the_numberof_lines_in_given_file(){
     	ReadFile rf = new ReadFile();
-    	String text = rf.readFile();
+    	String text = rf.readFile("one.txt");
     	Wc wc = new Wc(text);
     	assertEquals(10,wc.getCountWords());
 
@@ -103,7 +103,7 @@ public class WcTest{
 	@Test
   	public void getCountCherecters_geves_the_numberof_lines_in_given_file(){
     	ReadFile rf = new ReadFile();
-    	String text = rf.readFile();
+    	String text = rf.readFile("one.txt");
     	Wc wc = new Wc(text);
     	assertEquals(46,wc.getCountCherecters());
 
@@ -112,7 +112,7 @@ public class WcTest{
 	@Test
   	public void getCountWithOption_gives_the_number_of_lines_for_l_option(){
     	ReadFile rf = new ReadFile();
-    	String text = rf.readFile();
+    	String text = rf.readFile("one.txt");
     	Wc wc = new Wc(text);
     	assertEquals(1,wc.getCountWithOption("-l"));
 	}
@@ -120,15 +120,23 @@ public class WcTest{
 	@Test
   	public void getCountWithOption_gives_the_number_of_charecters_for_c_option(){
     	ReadFile rf = new ReadFile();
-    	String text = rf.readFile();
+    	String text = rf.readFile("one.txt");
     	Wc wc = new Wc(text);
     	assertEquals(46,wc.getCountWithOption("-c"));
 	}
 	@Test
   	public void getCountWithOption_gives_the_number_of_words_for_w_option(){
     	ReadFile rf = new ReadFile();
-    	String text = rf.readFile();
+    	String text = rf.readFile("one.txt");
     	Wc wc = new Wc(text);
     	assertEquals(10,wc.getCountWithOption("-w"));
+	}
+
+	@Test
+  	public void getCountWithOption_gives_the_0_for_wrong_option(){
+    	ReadFile rf = new ReadFile();
+    	String text = rf.readFile("one.txt");
+    	Wc wc = new Wc(text);
+    	assertEquals(0,wc.getCountWithOption("-k"));
 	}
 }

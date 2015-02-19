@@ -31,7 +31,9 @@ class Wc{
     	Wc wc = new Wc(text);
 	  	switch(option){
 	  		case "-l" :
-	  		return wc.getCountLines();
+	  			return wc.getCountLines();
+	  		case "-c" :
+	  			return wc.getCountCherecters();
 	  		default :
 	  			break;
 		}

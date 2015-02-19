@@ -17,6 +17,13 @@ public class WcTest{
 		Wc wc = new Wc(text);
 		assertEquals(1,wc.getCountLines());
 	}
+	@Test
+	public void getCountLines_gives_3_when_we_give_the_string_that_contains_new_three_lines() {
+		Wc wc = new Wc("Hello \r\n How are You ?\r\n Tell\r\n");
+		assertEquals(2,wc.getCountLines());
+	}
+
+		
 
 	@Test
 	public void getCountLines_gives_2_for_given_string (){

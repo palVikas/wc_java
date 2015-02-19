@@ -116,12 +116,19 @@ public class WcTest{
     	Wc wc = new Wc(text);
     	assertEquals(1,wc.getCountWithOption("-l"));
 	}
-	
+
 	@Test
   	public void getCountWithOption_gives_the_number_of_charecters_for_c_option(){
     	ReadFile rf = new ReadFile();
     	String text = rf.readFile();
     	Wc wc = new Wc(text);
     	assertEquals(46,wc.getCountWithOption("-c"));
+	}
+	@Test
+  	public void getCountWithOption_gives_the_number_of_words_for_w_option(){
+    	ReadFile rf = new ReadFile();
+    	String text = rf.readFile();
+    	Wc wc = new Wc(text);
+    	assertEquals(10,wc.getCountWithOption("-w"));
 	}
 }

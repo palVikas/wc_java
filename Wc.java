@@ -34,6 +34,8 @@ class Wc{
 	  			return wc.getCountLines();
 	  		case "-c" :
 	  			return wc.getCountCherecters();
+	  		case "-w" :
+	  			return wc.getCountWords();
 	  		default :
 	  			break;
 		}

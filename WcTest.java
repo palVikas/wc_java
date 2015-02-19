@@ -54,7 +54,7 @@ public class WcTest{
   	}
 
   	@Test
-  	public void getCountWords_gives_2_for_hii_string (){
+  	public void getCountWords_gives_2_for_hii_string () {
 	    String text = "hii how are you";
 	    Wc wc = new Wc(text);
 	    assertEquals(4,wc.getCountWords());
@@ -66,5 +66,39 @@ public class WcTest{
     	String text = "  helooo      ba        gf      nahi       gdf \r\n   b";
     	Wc wc = new Wc(text);
     	assertEquals(6,wc.getCountWords());
+	}
+
+	@Test
+  	public void readFile_gives_the_content_of_the_file_(){
+  		String expected = "hello, this is a good day.\r\nWhat do you think?";
+    	ReadFile rf = new ReadFile();
+    	String text = rf.readFile();
+    	assertEquals(expected,text);
+
+	}
+
+	@Test
+  	public void getCountLines_geves_the_numberof_lines_in_given_file(){
+    	ReadFile rf = new ReadFile();
+    	String text = rf.readFile();
+    	Wc wc = new Wc(text);
+    	assertEquals(1,wc.getCountLines());
+
+	}
+	@Test
+  	public void getCountwords_geves_the_numberof_lines_in_given_file(){
+    	ReadFile rf = new ReadFile();
+    	String text = rf.readFile();
+    	Wc wc = new Wc(text);
+    	assertEquals(10,wc.getCountWords());
+
+	}
+	@Test
+  	public void getCountCherecters_geves_the_numberof_lines_in_given_file(){
+    	ReadFile rf = new ReadFile();
+    	String text = rf.readFile();
+    	Wc wc = new Wc(text);
+    	assertEquals(46,wc.getCountCherecters());
+
 	}
 }
